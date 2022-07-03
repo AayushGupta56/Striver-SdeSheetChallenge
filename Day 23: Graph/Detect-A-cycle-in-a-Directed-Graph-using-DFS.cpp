@@ -9,7 +9,7 @@ bool dfs(int node,int n,vector<int>&visited,vector<int>&visited2,vector<int>adj[
                 return true;
             }
         }
-        else if(visited2[it]==1){return true;}
+        else if(visited[it]==1&&visited2[it]==1){return true;}
         
     }
     visited2[node]=0;
