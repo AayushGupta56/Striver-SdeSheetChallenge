@@ -5,6 +5,8 @@ void dfs(int node,vector<int>&visited,vector<int>adj[],vector<int>&ans){
         if(visited[it]==0){
            dfs(it,visited,adj,ans);
         }
+        //don't push_back here because all nodes should be after main node
+        
     }
     ans.push_back(node);
     return;
