@@ -1,4 +1,11 @@
 #include <bits/stdc++.h> 
+int solve(int a,int b,int m){
+	//a^b
+     if(b==1)return a;
+    long ans=solve(a,b/2);
+     if(b%2==1)return (a*(ans*ans)%m)%m;
+     else return (ans*ans)%m;
+}
 int modularExponentiation(int x, int n, int m) {
 	 int ans=1;
        
