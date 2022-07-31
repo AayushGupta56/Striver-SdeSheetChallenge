@@ -2,7 +2,7 @@
  
 int solve(int a,int b,int m){
     //a^b
-     if(b==0)return 1;
+     if(b==1)return a;
  long long  ans=solve(a,b/2,m);
      if(b%2==1)return (((a%m)*(ans%m))%m*(ans%m))%m;
      else return (ans*ans)%m;
