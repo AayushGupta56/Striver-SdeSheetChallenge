@@ -20,7 +20,7 @@ int bellmonFord(int n, int e, int src, int dest, vector<vector<int>> &edges) {
             int v = it[1];
             int d = it[2];
             if(dist[u] !=1e9 && dist[u]+d<dist[v]){
-                negativeCycle = false;
+                negativeCycle = true;
                break;
             }
         }
