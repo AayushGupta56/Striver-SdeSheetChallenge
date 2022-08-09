@@ -12,7 +12,8 @@ int find(int n,int parent[]  , int size []){
   
 }
 void Union(int a,int b, int parent[] , int size []){
-     a=find(a,parent,size); b=find(b,parent,size);
+     a=find(a,parent,size); b=find(b,parent,size);//always convert and b in 
+    //find(a)and find(b) because we need to change at their parents;
     if(a!=b){
         if(size[a]>=size[b]){
             size[b]+=size[a];
@@ -40,7 +41,6 @@ int kruskalMST(int n, int m, vector<vector<int>> &graph) {
         if(find(it[0],parent,size)==find(it[1],parent,size))continue;
         if(find(it[0],parent,size)!=find(it[1],parent,size)){
             Union(it[0],it[1],parent,size);
-		//cout<<it[0]<<it[1]<<endl; if asked for spanning tree;
             ans+=it[2];
             
            
