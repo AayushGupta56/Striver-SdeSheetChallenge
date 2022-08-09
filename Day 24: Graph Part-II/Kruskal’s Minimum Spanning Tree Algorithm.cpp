@@ -40,6 +40,7 @@ int kruskalMST(int n, int m, vector<vector<int>> &graph) {
         if(find(it[0],parent,size)==find(it[1],parent,size))continue;
         if(find(it[0],parent,size)!=find(it[1],parent,size)){
             Union(it[0],it[1],parent,size);
+		//cout<<it[0]<<it[1]<<endl; if asked for spanning tree;
             ans+=it[2];
             
            
