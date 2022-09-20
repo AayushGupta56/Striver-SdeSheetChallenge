@@ -26,3 +26,31 @@ vector<vector<int>> findSubsetsThatSumToK(vector<int> nums, int n, int target)
         solve(nums,ans,subset,0,0,target,n);
         return ans;
 }
+/////////////////////////////////////////////////////////
+#include <bits/stdc++.h>
+void solve(vector<int>&arr,vector<vector<int>>&ans,vector<int>&v,int B,int k){
+    if(B==0){
+        ans.push_back(v);
+        return;
+    }
+    
+    if(B<0) return;
+    
+    for(int i=k;i<arr.size();i++){
+        v.push_back(arr[i]);
+        solve(arr,ans,v,B-arr[i],i);
+        v.pop_back();
+    }
+}
+vector<vector<int>> combSum(vector<int>& ARR, int B)
+{
+	sort(ARR.begin(),ARR.end());
+    vector<vector<int>>ans;
+    vector<int>v;
+    
+    solve(ARR,ans,v,B,0);
+    
+    
+    
+    return ans;
+}
